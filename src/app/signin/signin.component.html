@@ -1,0 +1,66 @@
+<div class="container form-bg">
+  <div class="row align-items-center page-content">
+    <div class="col-md-7 user-image">
+      <img src="assets/images/academy-form-page-image.png" alt="academy-form-page-bg" />
+    </div>
+    <div class="col-md-5 form-section">
+      <div class="form login">
+        <div class="form-logo text-center">
+          <a [routerLink]="['']"><img src="assets/images/team-academy-outer.png" alt="team-academy-logo"></a>
+        </div>
+        <div class="form-heading arial">
+          <h1 class="form-title">Sign In</h1>
+          <p class="subtitle">Don't have an account?
+            <a [routerLink]="['/signup']">Create your account</a>
+          </p>
+        </div>
+        <form [formGroup]="signinForm" (ngSubmit)="onSubmit()">
+          <div class="form-group">
+            <input type="text" placeholder="Username*" class="form-control" formControlName="userName">
+            <div
+              *ngIf="signinForm.get('userName').invalid && (signinForm.get('userName').dirty || signinForm.get('userName').touched)"
+              class="alert alert-danger">
+              <div *ngIf="signinForm.get
+              ('userName').errors.required">
+                Username is required.
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <input type="password" placeholder="Password*" class="form-control" formControlName="password">
+            <div
+              *ngIf="signinForm.get('password').invalid && (signinForm.get('password').dirty || signinForm.get('password').touched)"
+              class="alert alert-danger">
+              <div *ngIf="signinForm.get('password').errors.required">
+                Password is required.
+              </div>
+              <div *ngIf="signinForm.get('password').errors.minlength">
+                Password must be at least 4 characters long.
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-6">
+              <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">Remember Me</label>
+              </div>
+            </div>
+            <div class="col-6 text-right">
+              <a href="#" class="password-text">Forgot Password?</a>
+            </div>
+          </div>
+          <button type="submit" [disabled]="signinForm.invalid" class="btn btn-primary btn btn-green w-100">Sign
+            In</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<footer class="form-page">
+  <div class="container custom-width">
+    <div class="row">
+      <div class="col text-center">Team Academy &copy; 2020 | All rights reserved.</div>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,81 @@
+<article class="wrapper">
+  <!--primary navbar-->
+  <nav class="navbar fixed-top navbar-light bg-light custom-navbar">
+    <a [routerLink]="['/']" class="navbar-brand"><img src="assets/images/team-academy-logo.png" alt="team-academy-logo" title="Team Academy"></a>
+    <div class="form-inline">
+      <div class="btn-group mr-3">
+        <button type="button" class="btn btn-info dropdown-toggle btn-green btn-property" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Explore Courses
+        </button>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="#">Course 1</a>
+          <a class="dropdown-item" href="#">Course 2</a>
+          <a class="dropdown-item" href="#">Course 3</a>
+        </div>
+      </div>
+      <a class="btn btn-success my-2 my-sm-0 btn-green btn-property" [routerLink]="['/signin']">Sign in</a>
+    </div>
+  </nav>
+  <!--welcome section-->
+  <section class="welcome-section">
+    <div class="container custom-width">
+      <div class="row">
+        <div class="col">
+          <h1 class="primary-heading">
+            Welcome to Team Academy
+          </h1> 
+          <p class="sub-heading">It works! Powered by Open edX</p>
+          <input type="search" class="course-search" placeholder="Search for a course">
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--popular courses section-->
+  <section class="container custom-width">
+    <div class="row justify-content-between align-items-center">
+      <div class="col-md-8">
+        <h2 class="section-title">Popular Courses</h2>
+      </div>
+      <div class="col-md-4 text-right">
+        <div class="all-courses-link">
+          All Courses <a class="arrow-box" href="">&nbsp;</a>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div *ngFor="let courses of popularCourse" class="col-md-3">
+        <div class="courses-card">
+          <div class="course-image">
+            <img [src]="courses.courseImage" alt="" [title]="courses.courseName">
+          </div>
+          <div class="course-detail">
+            <p class="course-id">{{ courses.courseCode }}</p>
+            <h3 class="course-name">{{ courses.courseName }}</h3>
+          </div>
+          <div class="row">
+            <div class="col-md-8">
+              <p class="course-date">Starts: {{ courses.startDate }}</p>
+            </div>
+            <div class="col-md-4 align-self-end">
+              <a class="arrow-box" [routerLink]="['/signin']">&nbsp;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</article>
+<!--footer section-->
+<footer>
+  <div class="container custom-width">
+    <div class="row">
+      <div class="col-md-6">Team Computers Pvt. Ltd. &copy; 2020 | All rights reserved.</div>
+      <div class="col-md-6 text-right">
+        <a href="javascript:void(0);" class="footer-link">About</a> |
+        <a href="javascript:void(0);" class="footer-link">Blog</a> |
+        <a href="javascript:void(0);" class="footer-link">Contact</a> |
+        <a href="javascript:void(0);" class="footer-link">Donate</a>
+      </div>
+    </div>
+  </div>
+</footer>

@@ -1,1 +1,37 @@
 /* You can add global styles to this file, and also import other style files */
+/*Common CSS*/
+html, body {
+  min-height: 100%;
+  height: 100%;
+}
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+.inner-page {
+  background: #f3f3f3;
+}
+.custom-width {
+  max-width: 1310px;
+}
+.btn-green {
+  background: #4ac1c7;
+  border: none;
+}
+.btn {
+  padding: 0.5rem 1rem;
+}
+.btn-property {
+  font-size: 14px;
+  font-weight: 600;
+}
+/*footer css*/
+footer {
+  background: #191d44;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 1rem 0;
+}
+.footer-link {
+  color: #fff;
+}
